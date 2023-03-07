@@ -6,7 +6,4 @@ touch /etc/config/frp
 
 uci commit frp
 
-if [ -f "/var/etc/frp/frpc.conf" ]; 
-  echo "---"
-fi
-  echo "---"
+$LUCI_SYSROOT/etc/init.d/frp start
