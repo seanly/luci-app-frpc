@@ -1,0 +1,12 @@
+#!/bin/sh
+
+/init.sh env
+
+touch /etc/config/frp
+
+uci commit frp
+
+if [ -f "/var/etc/frp/frpc.conf" ]; 
+  echo "---"
+fi
+  echo "---"
