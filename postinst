@@ -3,7 +3,8 @@
 /init.sh env
 
 touch /etc/config/frp
-
 uci commit frp
 
-echo "$LUCI_SYSROOT/etc/init.d/frp start" >> /etc/rc.local
+if [ "$(cat "/etc/rc.local" | grep -c "/init.d/frp")" -eq 0 ]; then
+  echo "$LUCI_SYSROOT/etc/init.d/frp start" >> /etc/rc.local
+fi
